@@ -1,0 +1,4 @@
+#!/bin/bash
+polo(){
+  [[ -n $marco_wd ]] && cd "$marco_wd";
+}

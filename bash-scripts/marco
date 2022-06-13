@@ -1,0 +1,6 @@
+#!/bin/bash
+
+marco(){
+  marco_wd=$PWD;
+  print $marco_wd;
+}
