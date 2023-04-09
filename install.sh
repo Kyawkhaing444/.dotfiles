@@ -4,7 +4,7 @@
 xcode-select --install
 
 # Run the install_packages.sh script
-bash "$HOME/.dotfiles/scripts/install_packages.sh"
+bash "./scripts/install_packages.sh"
 
 # Copy iterm2 preferences
 cp com.googlecode.iterm2.plist ~/Library/Preferences/
@@ -13,6 +13,10 @@ cp com.googlecode.iterm2.plist ~/Library/Preferences/
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # Install Powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+# Install Packer
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # Add any additional configuration, like setting up zsh as the default shell
 chsh -s $(which zsh)
