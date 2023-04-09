@@ -4,10 +4,22 @@
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Tap Homebrew
-brew tap homebrew/bundle homebrew/cask homebrew/cask-fonts homebrew/cask-versions homebrew/core homebrew/services civo/tools anchore/grype jesseduffield/lazygit romkatv/powerlevel10k
+brew tap "homebrew/bundle"
+brew tap "homebrew/cask"
+brew tap "homebrew/cask-fonts"
+brew tap "homebrew/cask-versions"
+brew tap "homebrew/core"
+brew tap "homebrew/services"
+brew tap "civo/tools"
+brew tap "anchore/grype"
+brew tap "jesseduffield/lazygit"
+brew tap "romkatv/powerlevel10k"
 
 # System monitoring, trials
 brew install --cask macs-fan-control istat-menus turbo-boost-switcher
+
+# Fonts
+brew install --cask font-hack-nerd-font
 
 # System
 brew install mas curl wget git vim openssl coreutils moreutils findutils binutils rename gnu-sed gnu-tar gawk gnutls gnu-indent gnu-getopt tree htop pidof pstree grep openssh rsync ssh-copy-id screen gmp nmap socat rlwrap dnstracer sslscan watch neovim

@@ -1,24 +1,18 @@
 #!/bin/bash
 
-# Install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# Install Xcode Command Line Tools
+xcode-select --install
 
-# Update Homebrew and install necessary packages
-brew update
-brew upgrade
-brew install git yadm zsh vim tmux
+# Run the install_packages.sh script
+bash "$HOME/.dotfiles/scripts/install_packages.sh"
 
-# Clone your dotfiles repository and set up dotfiles with YADM
-yadm clone https://github.com/your-username/dotfiles.git
+# Copy iterm2 preferences
+cp com.googlecode.iterm2.plist ~/Library/Preferences/
 
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# Run the install_packages.sh script
-bash "$HOME/dotfiles/scripts/install_packages.sh"
-
-# Run the nerds_font.sh script
-bash "$HOME/dotfiles/scripts/nerds_font.sh"
+# Install Powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # Add any additional configuration, like setting up zsh as the default shell
 chsh -s $(which zsh)
